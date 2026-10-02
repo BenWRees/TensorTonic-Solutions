@@ -20,8 +20,8 @@ def entropy_node(y: list[int]) -> float:
 
     entropy_per_item = []
     for cls, probs in probabilities.items() : 
-        if probs == 0 :
-            entropy_per_item.append(0)
+        if probs == 0.0 :
+            entropy_per_item.append(0.0)
             continue 
         entropy_per_item.append(probs*np.log2(probs)) 
 
