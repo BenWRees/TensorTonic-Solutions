@@ -4,7 +4,6 @@ def entropy_node(y: list[int]) -> float:
     """
     Returns the Shannon entropy as a Python float.
     """
-    # compute classes and counts of classes present 
     classes = {}
     for node in y : 
         if node in classes : 
@@ -14,7 +13,6 @@ def entropy_node(y: list[int]) -> float:
 
     n_classes = len(classes.keys())
 
-    #compute probabilities of classes 
     probabilities = {}
     for cls, count in classes.items() : 
         probabilities[cls] = count/len(y)
