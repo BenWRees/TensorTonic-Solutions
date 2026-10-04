@@ -9,7 +9,12 @@ def autocorrelation(series: list, max_lag: int) -> list:
         return [1.0] + [0.0] * max_lag
 
     return [
-        sum([
-            (series[k]-mean_series)*(series[k+lag]-mean_series) for k in range(len(series)-lag)
-            ])/var_series if var_series != 0 else 0.0 for lag in range(max_lag + 1) 
+         1.0 if i == 0 else (
+            sum(
+                (series[k] - mean_series) * (series[k + i] - mean_series)
+                for k in range(len(series) - i)
+            ) / var_series
+            if var_series != 0 else 0.0
+        )
+        for i in range(max_lag + 1)
     ]
