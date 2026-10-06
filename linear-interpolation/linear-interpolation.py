@@ -13,7 +13,6 @@ def linear_interpolation(values: list) -> list:
         left = find_left(i, values)
         right = find_right(i, values)
         
-        # Linear interpolation
         result[i] = (
             values[left]
             + (i - left) / (right - left)
